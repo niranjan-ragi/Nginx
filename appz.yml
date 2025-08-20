@@ -1,24 +1,20 @@
-    app:
-        name: Nginx
-        code: NGINX
-        notify: rniranjan@cloudbourne.co
+app:
+    name: mbk-nginx
+    code: MBK-NGINX
+    notify: rniranjan@ecloudcontrol.com
         
-    build:
-        version: 1.2
-        env: DEV
-        build_file: none
-        output_files: output/*.zip
-        image_template: nginx-1.26
+build:
+    version: 1.26
+    env: DEV
+    build_file: none
+    output_files: output/*.zip
+    image_template: nginx-1.26
         
-    deploy:
-        context: niranjan-ragi/DEV
-        replicas: 1
-        port:
-        - 443
-    
-    properties:
-        SITE_PRIVATE_KEY:
-          vault: SITE_PRIVATE_KEY
-        SITE_CERT:
-          vault: SITE_CERT
-        revision : 3
+deploy:
+    context: niranjan-ragi/DEV
+    replicas: 1
+    port:
+    - 8080
+    - 80
+properties:
+    revision : 21
