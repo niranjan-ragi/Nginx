@@ -1,17 +1,17 @@
     app:
         name: Nginx
         code: NGINX
-        notify: appzdev@cloudbourne.co
+        notify: rniranjan@cloudbourne.co
         
     build:
         version: 1.2
         env: DEV
         build_file: none
         output_files: output/*.zip
-        image_template: nginx-1.14
+        image_template: nginx-1.26
         
     deploy:
-        context: alpha/DEV
+        context: niranjan-ragi/DEV
         replicas: 1
         port:
         - 443
